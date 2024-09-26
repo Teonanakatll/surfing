@@ -17,14 +17,14 @@
 // xl — 1200px
 // xxl — 1400px
 
-$accent: #F88500 // Accent Color
-$textcolor: #333 // Text Color
+$accent: #4AF6CD // Accent Color
+$textcolor: #ECECECFF // Text Color
 $dark: #202328
 $deep: #171A1A
 $middle-gray: rgba(#6F7A8B, .75)
 $fontsize: 14px // Body Font Size
 $lineheight: 1.7 // Document Line Height
-$userfont: montserrat-t, sans-serif // User Font Family
+$userfont: firasans-f, sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
 // Bootstrap compatible gutter variable => $gutter
@@ -34,12 +34,12 @@ $gutter: $grid-gutter-width
 // IMPORT SECTION
 
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
-@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
 
 // @import 'app/libs/font-awesome/css/font-awesome.min'
 // @import 'node_modules/swiper/swiper-bundle'
 
-//  @import '../../node_modules/swiper/swiper-bundle';
+@import 'node_modules/swiper/swiper-bundle.min'
 // расширение файла не пишем ! (css)
 
 // FONTS LOAD SECTION
@@ -51,8 +51,10 @@ $gutter: $grid-gutter-width
 		font-weight: $fweight
 		src: url($furl) format('woff2')
 
-@include font('montserrat-t', normal, 400, '../fonts/MontserratAlternates-Regular.woff2')
-@include font('montserrat-t', normal, 600, '../fonts/MontserratAlternates-SemiBold.woff2')
+@include font('firasans-f', normal, 300, '../fonts/FiraSansLight.woff2')
+@include font('firasans-f', normal, 400, '../fonts/FiraSansRegular.woff2')
+@include font('firasans-f', normal, 500, '../fonts/FiraSansMedium.woff2')
+@include font('firasans-f', normal, 800, '../fonts/FiraSans-ExtraBold.woff2')
 // @include font('roboto-t', italic, 700, '../fonts/roboto-v29-cyrillic-700.woff2')
 
 
@@ -80,3 +82,5 @@ body
 	min-width: 320px
 	position: relative
 	overflow-x: hidden
+	background-color: $deep
+

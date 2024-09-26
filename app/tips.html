@@ -41,13 +41,63 @@
     }
 }
 
+
+
+<!-- скрипт автоматически находит элементы начинающиеся с bg- и подставляет нужный формат изображения-->
+<script>
+    // Проверка поддержки AVIF
+    function supportsAvif() {
+      return new Promise(resolve => {
+        const avif = new Image();
+        avif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAACAGF2aWZtaWYxAAABAAEAAQAAAFQwF';
+        avif.onload = () => resolve(true);
+        avif.onerror = () => resolve(false);
+      });
+    }
+  
+    // Проверка поддержки WebP
+    function supportsWebp() {
+      return new Promise(resolve => {
+        const webp = new Image();
+        webp.src = 'data:image/webp;base64,UklGRiIAAABXRUJQVlA4TCEAAAAvAAAAAAfQ//73v/+BiOh/AAA=';
+        webp.onload = () => resolve(true);
+        webp.onerror = () => resolve(false);
+      });
+    }
+  
+    // Функция для динамической установки background-image
+    async function setBackgrounds() {
+      // Получаем все элементы с id, начинающимся на 'bg-'
+      const bgElements = document.querySelectorAll('[id^="bg-"]');
+  
+      let format = 'jpg'; // По умолчанию формат JPEG
+  
+      if (await supportsAvif()) {
+        format = 'avif'; // Если поддерживается AVIF
+      } else if (await supportsWebp()) {
+        format = 'webp'; // Если поддерживается WebP
+      }
+  
+      // Для каждого элемента установить background
+      bgElements.forEach(element => {
+        const id = element.id;
+        const imageName = id.replace('bg-', ''); // Убираем 'bg-' из id для получения имени изображения
+        element.style.backgroundImage = `url('images/${imageName}.${format}')`;
+      });
+    }
+  
+    // Вызов функции после загрузки страницы
+    window.onload = setBackgrounds;
+  </script>
+
+
 <!-- Вставляем спрайт в HTML -->
 <svg class="tesla">
-    <use xlink:href="images/sprite.svg#tesla-9"></use>
+    <use xlink:href="images/sprite.svg#tesla-9" alt=""></use>
 </svg>
 
 <svg class="nasa">
-    <use xlink:href="images/sprite.svg#nasa-6"></use>
+    <use xlink:href="images/sprite.svg#nasa-6" alt=""></use>
 </svg>
 
     npm install gulp@^4.0.0 --save-dev
