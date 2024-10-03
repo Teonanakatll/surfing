@@ -443,10 +443,12 @@
 	&__descr
 		background-repeat: no-repeat
 		background-position: right bottom
-		padding: 0 0 127px 132px
-		margin-top: -100px
+		padding: 0 0 127px 105px
+		margin-top: -160px
 		width: auto
-		mit-height: 380px
+		height: 280px
+		display: flex
+		align-items: end
 
 .holder-slider__info
 	display: flex
@@ -489,16 +491,25 @@
 		font-weight: 400
 		position: absolute
 		top: 32px
-		right: 0
+		right: 55px
 		white-space: nowrap
 
 //                                          section SLEEP
 
-.stars
-	display: inline-block
-	margin-left: 10px
-	.star
-		width: 55px
-		height: 55px
-		margin: 0 -12px
-		padding-bottom: 8px
+.sleep
+	background-position: right 1200px
+	.holder-slider__descr
+		padding-left: 110px
+		margin-top: -280px
+		min-height: 400px
+		background-size: contain
+	.holder-pricing__span
+		right: 30px
+
+.minus, .plus
+	width: 14px
+	height: 14px
+
+.holder-slider__info-item:last-child
+	.holder-slider__info-title
+		width: 300px

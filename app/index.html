@@ -742,7 +742,7 @@
 
 		<!--                                             holder__slider                       -->
 
-		<div class="swiper holder__slider">
+		<div class="swiper holder__slider travel-slider">
 			<div class="swiper-wrapper">
 
 				<!--                                        СЛАЙД holder-slider                             -->
@@ -784,7 +784,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">$1,976 USD
-								<span>Round Trip</span>
+								<span class="holder-pricing__span">Round Trip</span>
 							</div>
 						</div>
 					</div>
@@ -838,7 +838,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">$1,976 USD
-								<span>Round Trip</span>
+								<span class="holder-pricing__span">Round Trip</span>
 							</div>
 						</div>
 					</div>
@@ -892,7 +892,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">$1,976 USD
-								<span>Round Trip</span>
+								<span class="holder-pricing__span">Round Trip</span>
 							</div>
 						</div>
 					</div>
@@ -946,7 +946,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">$1,976 USD
-								<span>Round Trip</span>
+								<span class="holder-pricing__span">Round Trip</span>
 							</div>
 						</div>
 					</div>
@@ -1000,7 +1000,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">$1,976 USD
-								<span>Round Trip</span>
+								<span class="holder-pricing__span">Round Trip</span>
 							</div>
 						</div>
 					</div>
@@ -1054,7 +1054,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">$1,976 USD
-								<span>Round Trip</span>
+								<span class="holder-pricing__span">Round Trip</span>
 							</div>
 						</div>
 					</div>
@@ -1108,7 +1108,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">$1,976 USD
-								<span>Round Trip</span>
+								<span class="holder-pricing__span">Round Trip</span>
 							</div>
 						</div>
 					</div>
@@ -1162,7 +1162,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">$1,976 USD
-								<span>Round Trip</span>
+								<span class="holder-pricing__span">Round Trip</span>
 							</div>
 						</div>
 					</div>
@@ -1198,7 +1198,7 @@
 </section>
 
 <!--                                        SECTION holder (SLEEP)-->
-<section class="bg--travel-bg holder sleep">
+<section class="bg--flower holder sleep">
 	<div class="container">
 		<div class="title">
 			<div class="title__bg">
@@ -1207,12 +1207,12 @@
 			</div>
 		</div>
 
-		<!--                                             holder__slider                       -->
+		<!--                                             holder__slider  (sleep)                       -->
 
-		<div class="swiper holder__slider">
+		<div class="swiper holder__slider sleep-slider">
 			<div class="swiper-wrapper">
 
-				<!--                                        СЛАЙД holder-slider                             -->
+				<!--                                        СЛАЙД holder-slider (sleep)                             -->
 
 				<div class="swiper-slide holder__slider-item holder-slider">
 					<div class="bg--sleepslider-bg holder-slider__head">
@@ -1225,7 +1225,7 @@
 						</div>
 					</div>
 
-					<div class="bg--plane holder-slider__descr" data-swiper-parallax="-15%">
+					<div class="bg--hammok holder-slider__descr" data-swiper-parallax="-15%">
 						<div class="descr">
 							<div class="headline-right">Raitng</div>
 							<div class="descr__head">
@@ -1260,7 +1260,19 @@
 							<div class="holder-slider__info-subtitle"># of nights</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="nights" id="nights" min="1" max="30" step="1" value="5">
+									<input type="number" class="nights" min="1" max="30" step="1" value="5">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								nights
 							</div>
@@ -1269,7 +1281,19 @@
 							<div class="holder-slider__info-subtitle"># of guests</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="guests" id="guests" min="1" max="30" step="1" value="4">
+									<input type="number" class="guests" min="1" max="30" step="1" value="4">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								 guests
 								</div>
@@ -1277,8 +1301,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">
-								$
-								<span class="summ">349</span>
+								<span data-price="17.45" class="summ"></span>
 								 USD
 								<span class="holder-pricing__span">per night</span>
 							</div>
@@ -1295,7 +1318,7 @@
 					</div>
 				</div>
 
-				<!--                                        СЛАЙД holder-slider                             -->
+				<!--                                        СЛАЙД holder-slider (sleep)                             -->
 
 				<div class="swiper-slide holder__slider-item holder-slider">
 					<div class="bg--sleepslider-bg holder-slider__head">
@@ -1308,7 +1331,7 @@
 						</div>
 					</div>
 
-					<div class="bg--plane holder-slider__descr" data-swiper-parallax="-15%">
+					<div class="bg--hammok holder-slider__descr" data-swiper-parallax="-15%">
 						<div class="descr">
 							<div class="headline-right">Raitng</div>
 							<div class="descr__head">
@@ -1343,7 +1366,19 @@
 							<div class="holder-slider__info-subtitle"># of nights</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="nights" id="nights" min="1" max="30" step="1" value="5">
+									<input type="number" class="nights" min="1" max="30" step="1" value="5">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								nights
 							</div>
@@ -1352,7 +1387,19 @@
 							<div class="holder-slider__info-subtitle"># of guests</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="guests" id="guests" min="1" max="30" step="1" value="4">
+									<input type="number" class="guests" min="1" max="30" step="1" value="4">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								 guests
 								</div>
@@ -1360,8 +1407,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">
-								$
-								<span class="summ">349</span>
+								<span data-price="17.45" class="summ">349</span>
 								 USD
 								<span class="holder-pricing__span">per night</span>
 							</div>
@@ -1378,7 +1424,7 @@
 					</div>
 				</div>
 
-				<!--                                        СЛАЙД holder-slider                             -->
+				<!--                                        СЛАЙД holder-slider (sleep)                             -->
 
 				<div class="swiper-slide holder__slider-item holder-slider">
 					<div class="bg--sleepslider-bg holder-slider__head">
@@ -1391,7 +1437,7 @@
 						</div>
 					</div>
 
-					<div class="bg--plane holder-slider__descr" data-swiper-parallax="-15%">
+					<div class="bg--hammok holder-slider__descr" data-swiper-parallax="-15%">
 						<div class="descr">
 							<div class="headline-right">Raitng</div>
 							<div class="descr__head">
@@ -1426,7 +1472,19 @@
 							<div class="holder-slider__info-subtitle"># of nights</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="nights" id="nights" min="1" max="30" step="1" value="5">
+									<input type="number" class="nights" min="1" max="30" step="1" value="5">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								nights
 							</div>
@@ -1435,7 +1493,19 @@
 							<div class="holder-slider__info-subtitle"># of guests</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="guests" id="guests" min="1" max="30" step="1" value="4">
+									<input type="number" class="guests" min="1" max="30" step="1" value="4">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								 guests
 								</div>
@@ -1443,8 +1513,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">
-								$
-								<span class="summ">349</span>
+								<span data-price="17.45" class="summ">349</span>
 								 USD
 								<span class="holder-pricing__span">per night</span>
 							</div>
@@ -1461,7 +1530,7 @@
 					</div>
 				</div>
 
-				<!--                                        СЛАЙД holder-slider                             -->
+				<!--                                        СЛАЙД holder-slider (sleep)                             -->
 
 				<div class="swiper-slide holder__slider-item holder-slider">
 					<div class="bg--sleepslider-bg holder-slider__head">
@@ -1474,7 +1543,7 @@
 						</div>
 					</div>
 
-					<div class="bg--plane holder-slider__descr" data-swiper-parallax="-15%">
+					<div class="bg--hammok holder-slider__descr" data-swiper-parallax="-15%">
 						<div class="descr">
 							<div class="headline-right">Raitng</div>
 							<div class="descr__head">
@@ -1509,7 +1578,19 @@
 							<div class="holder-slider__info-subtitle"># of nights</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="nights" id="nights" min="1" max="30" step="1" value="5">
+									<input type="number" class="nights" min="1" max="30" step="1" value="5">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								nights
 							</div>
@@ -1518,7 +1599,19 @@
 							<div class="holder-slider__info-subtitle"># of guests</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="guests" id="guests" min="1" max="30" step="1" value="4">
+									<input type="number" class="guests" min="1" max="30" step="1" value="4">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								 guests
 								</div>
@@ -1526,8 +1619,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">
-								$
-								<span class="summ">349</span>
+								<span data-price="17.45" class="summ">349</span>
 								 USD
 								<span class="holder-pricing__span">per night</span>
 							</div>
@@ -1544,7 +1636,7 @@
 					</div>
 				</div>
 
-				<!--                                        СЛАЙД holder-slider                             -->
+				<!--                                        СЛАЙД holder-slider (sleep)                             -->
 
 				<div class="swiper-slide holder__slider-item holder-slider">
 					<div class="bg--sleepslider-bg holder-slider__head">
@@ -1557,7 +1649,7 @@
 						</div>
 					</div>
 
-					<div class="bg--plane holder-slider__descr" data-swiper-parallax="-15%">
+					<div class="bg--hammok holder-slider__descr" data-swiper-parallax="-15%">
 						<div class="descr">
 							<div class="headline-right">Raitng</div>
 							<div class="descr__head">
@@ -1592,7 +1684,19 @@
 							<div class="holder-slider__info-subtitle"># of nights</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="nights" id="nights" min="1" max="30" step="1" value="5">
+									<input type="number" class="nights" min="1" max="30" step="1" value="5">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								nights
 							</div>
@@ -1601,7 +1705,19 @@
 							<div class="holder-slider__info-subtitle"># of guests</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="guests" id="guests" min="1" max="30" step="1" value="4">
+									<input type="number" class="guests" min="1" max="30" step="1" value="4">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								 guests
 								</div>
@@ -1609,8 +1725,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">
-								$
-								<span class="summ">349</span>
+								<span data-price="17.45" class="summ">349</span>
 								 USD
 								<span class="holder-pricing__span">per night</span>
 							</div>
@@ -1627,7 +1742,7 @@
 					</div>
 				</div>
 
-				<!--                                        СЛАЙД holder-slider                             -->
+				<!--                                        СЛАЙД holder-slider (sleep)                             -->
 
 				<div class="swiper-slide holder__slider-item holder-slider">
 					<div class="bg--sleepslider-bg holder-slider__head">
@@ -1640,7 +1755,7 @@
 						</div>
 					</div>
 
-					<div class="bg--plane holder-slider__descr" data-swiper-parallax="-15%">
+					<div class="bg--hammok holder-slider__descr" data-swiper-parallax="-15%">
 						<div class="descr">
 							<div class="headline-right">Raitng</div>
 							<div class="descr__head">
@@ -1675,7 +1790,19 @@
 							<div class="holder-slider__info-subtitle"># of nights</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="nights" id="nights" min="1" max="30" step="1" value="5">
+									<input type="number" class="nights" min="1" max="30" step="1" value="5">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								nights
 							</div>
@@ -1684,7 +1811,19 @@
 							<div class="holder-slider__info-subtitle"># of guests</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="guests" id="guests" min="1" max="30" step="1" value="4">
+									<input type="number" class="guests" min="1" max="30" step="1" value="4">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								 guests
 								</div>
@@ -1692,8 +1831,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">
-								$
-								<span class="summ">349</span>
+								<span data-price="17.45" class="summ">349</span>
 								 USD
 								<span class="holder-pricing__span">per night</span>
 							</div>
@@ -1710,7 +1848,7 @@
 					</div>
 				</div>
 
-				<!--                                        СЛАЙД holder-slider                             -->
+				<!--                                        СЛАЙД holder-slider (sleep)                             -->
 
 				<div class="swiper-slide holder__slider-item holder-slider">
 					<div class="bg--sleepslider-bg holder-slider__head">
@@ -1723,7 +1861,7 @@
 						</div>
 					</div>
 
-					<div class="bg--plane holder-slider__descr" data-swiper-parallax="-15%">
+					<div class="bg--hammok holder-slider__descr" data-swiper-parallax="-15%">
 						<div class="descr">
 							<div class="headline-right">Raitng</div>
 							<div class="descr__head">
@@ -1758,7 +1896,19 @@
 							<div class="holder-slider__info-subtitle"># of nights</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="nights" id="nights" min="1" max="30" step="1" value="5">
+									<input type="number" class="nights" min="1" max="30" step="1" value="5">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								nights
 							</div>
@@ -1767,7 +1917,19 @@
 							<div class="holder-slider__info-subtitle"># of guests</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="guests" id="guests" min="1" max="30" step="1" value="4">
+									<input type="number" class="guests" min="1" max="30" step="1" value="4">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								 guests
 								</div>
@@ -1775,8 +1937,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">
-								$
-								<span class="summ">349</span>
+								<span data-price="17.45" class="summ">349</span>
 								 USD
 								<span class="holder-pricing__span">per night</span>
 							</div>
@@ -1793,7 +1954,7 @@
 					</div>
 				</div>
 
-				<!--                                        СЛАЙД holder-slider                             -->
+				<!--                                        СЛАЙД holder-slider (sleep)                             -->
 
 				<div class="swiper-slide holder__slider-item holder-slider">
 					<div class="bg--sleepslider-bg holder-slider__head">
@@ -1806,7 +1967,7 @@
 						</div>
 					</div>
 
-					<div class="bg--plane holder-slider__descr" data-swiper-parallax="-15%">
+					<div class="bg--hammok holder-slider__descr" data-swiper-parallax="-15%">
 						<div class="descr">
 							<div class="headline-right">Raitng</div>
 							<div class="descr__head">
@@ -1841,7 +2002,19 @@
 							<div class="holder-slider__info-subtitle"># of nights</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="nights" id="nights" min="1" max="30" step="1" value="5">
+									<input type="number" class="nights" min="1" max="30" step="1" value="5">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								nights
 							</div>
@@ -1850,7 +2023,19 @@
 							<div class="holder-slider__info-subtitle"># of guests</div>
 							<div class="holder-slider__info-title">
 								<div class="quantity">
-									<input type="number" name="guests" id="guests" min="1" max="30" step="1" value="4">
+									<input type="number" class="guests" min="1" max="30" step="1" value="4">
+									<div class="quantity-nav">
+										<div class="quantity-button quantity-up">
+											<svg class="plus">
+												<use xlink:href="images/sprite.svg#plus"></use>
+											</svg>
+										</div>
+										<div class="quantity-button quantity-down">
+											<svg class="minus">
+												<use xlink:href="images/sprite.svg#minus"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 								 guests
 								</div>
@@ -1858,8 +2043,7 @@
 						<div class="holder-slider__info-item">
 							<div class="holder-slider__info-subtitle">Pricing</div>
 							<div class="holder-slider__info-title">
-								$
-								<span class="summ">349</span>
+								<span data-price="17.45" class="summ">349</span>
 								 USD
 								<span class="holder-pricing__span">per night</span>
 							</div>

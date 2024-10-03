@@ -7,7 +7,7 @@ import { quantity } from "./quantity"
 import {EffectCube, EffectFade, Parallax, Mousewheel, Controller, Pagination, Scrollbar, Navigation, Thumbs, Autoplay } from 'swiper/modules'
 
 document.addEventListener('DOMContentLoaded', () => {
-
+	
 	const swiperDots = new Swiper('.slider-dots', {
 		modules: [Controller],
 		// mousewheel: {
@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		// 	el: '.header__slider-pagination',
 		// 	clickable: true,
 		// },
-		mousewheel: {
+    mousewheel: {
 			invert: true,
-		},
+	},
 		// centeredSlides: true,
 		loop: true,
 		speed: 1500,
@@ -88,6 +88,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		parallax: true,
 	})
 
+	// const swiperSleep = new Swiper('.sleep-slider', {
+	// 	modules: [Mousewheel, Navigation, Parallax],
+	// 	// mousewheel: {
+	// 	// 	invert: true,
+	// 	// },
+	// 	loop: true,
+	// 	speed: 2000,
+	// 	navigation: {
+	// 		prevEl: '.prev',
+	// 		nextEl: '.next',
+	// 	},
+	// 	parallax: true,
+	// })
+
 	// swiperTop.controller.control = swiperDots
 	// swiperDots.controller.control = swiperTop
 
@@ -103,6 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	setBackgrounds();
 
 	// скрипт обработки инпутов
-	quantity()
+	quantity();
 
 })
