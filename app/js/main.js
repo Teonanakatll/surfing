@@ -1,6 +1,8 @@
 import Swiper from "swiper"
 
 import {animate, map} from "./gsap-test"
+import { setBackgrounds } from "./set-background"
+import { quantity } from "./quantity"
 
 import {EffectCube, EffectFade, Parallax, Mousewheel, Controller, Pagination, Scrollbar, Navigation, Thumbs, Autoplay } from 'swiper/modules'
 
@@ -39,61 +41,68 @@ document.addEventListener('DOMContentLoaded', () => {
 		// 	el: '.header__slider-pagination',
 		// 	clickable: true,
 		// },
-		mousewheel: true,
+		mousewheel: {
+			invert: true,
+		},
 		// centeredSlides: true,
 		loop: true,
 		speed: 1500,
 	});
+
+	const swiperMap = new Swiper('.slider-map', {
+		slidesPerView: 8,
+		slideToClickedSlide: true,
+	})
+
+	const swiperSurf = new Swiper('.surf-slider', {
+		modules: [Mousewheel, Navigation, Thumbs],
+		// mousewheel: {
+		// 	invert: true,
+		// },
+		thumbs: {
+			swiper: swiperMap,
+		},
+		navigation: {
+			prevEl: '.prev',
+			nextEl: '.next',
+		},
+		centeredSlides: true,
+		slidesPerView: 4,
+		speed: 1500,
+		spaceBetween: -50,
+		loop: true,
+		slideToClickedSlide: true,
+	})
+
+	const swiperTravel = new Swiper('.holder__slider', {
+		modules: [Mousewheel, Navigation, Parallax],
+		mousewheel: {
+			invert: true,
+		},
+		loop: true,
+		speed: 2000,
+		navigation: {
+			prevEl: '.prev',
+			nextEl: '.next',
+		},
+		parallax: true,
+	})
+
 	// swiperTop.controller.control = swiperDots
 	// swiperDots.controller.control = swiperTop
 
 	// функция анимации крупных элементов хэдера
-	// animate();
+	animate();
 
 	// функция анимации карты
 	map();
+
+	// скрипт автоматически находит классы элементов начинающихся с  bg-- и подставляет нужный формат изображения
+	// также необходимо прописать фоллбак на случай если у пользователя отключен js: style="background-image: url('images/header-bg.jpg');"
+	// setBg();
+	setBackgrounds();
+
+	// скрипт обработки инпутов
+	quantity()
+
 })
-
-// скрипт автоматически находит элементы начинающиеся с bg- и подставляет нужный формат изображения
-// Проверка поддержки AVIF
-function supportsAvif() {
-	return new Promise(resolve => {
-		const avif = new Image();
-		avif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgANogQEAwgMg8f8D///8WfhwB8+ErK42A=';
-		avif.onload = () => resolve(true);
-		avif.onerror = () => resolve(false);
-	});
-}
-
-// Проверка поддержки WebP
-function supportsWebp() {
-	return new Promise(resolve => {
-		const webp = new Image();
-		webp.src = 'data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABQAQCdASoDAAIAAgA2JQBOgC6gAP73M8eLuxHGTv3eIAAA';
-		webp.onload = () => resolve(true);
-		webp.onerror = () => resolve(false);
-	});
-}
-
-// Функция для динамической установки background-image
-async function setBackgrounds() {
-	// Получаем все элементы с id, начинающимся на 'bg-'
-	const bgElements = document.querySelectorAll('[id^="bg_"]');
-
-	let format = 'jpg'; // По умолчанию формат JPEG
-
-	if (await supportsAvif()) {
-		format = 'avif'; // Если поддерживается AVIF
-	} else if (await supportsWebp()) {
-		format = 'webp'; // Если поддерживается WebP
-	}
-
-	// Для каждого элемента установить background
-	bgElements.forEach(element => {
-		const id = element.id;
-		const imageName = id.replace('bg_', ''); // Убираем 'bg-' из id для получения имени изображения
-		element.style.backgroundImage = `url('images/${imageName}.${format}')`;
-	});
-}
-
-window.onload = setBackgrounds;

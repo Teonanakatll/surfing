@@ -48,6 +48,7 @@
 				font-weight: 300
 				font-size: 16px
 				line-height: 10px
+				text-transform: capitalize
 		// border: 1px solid $accent
 	.swiper-slide-thumb-active
 		&::before
@@ -103,8 +104,8 @@
 
 .menu
 	margin-top: 40px
+	text-transform: capitalize
 	a
-		color: #fff
 		span
 			display: block
 			font-weight: 500
@@ -133,10 +134,13 @@
 	margin-top: 15px
 	margin-bottom: 35px
 
-.header__location > .map-marker
-	width: 11px
-	height: 13px
-	margin-right: 5px
+.header__location
+	.map-marker
+		width: 11px
+		height: 13px
+		margin-right: 5px
+	span
+		text-transform: capitalize
 
 .header__date
 	font-weight: 800
@@ -171,23 +175,15 @@
 			height: 100%
 			background: radial-gradient(circle, rgba(#222222, .43), #0F0F0F)
 			z-index: -1
-	&-navigation
-		position: absolute
-		top: 0
-		right: 0
-		z-index: 10
-		width: 69px
-		display: flex
-		align-items: center
-		justify-content: space-between
-		margin-top: 40px
-		margin-right: 80px
+
+
 
 .header__map
 	position: absolute
 	top: 0
 	right: 0
 	z-index: 2
+	pointer-events: none
 	// width: 55%
 
 .header__arrows
@@ -195,3 +191,314 @@
 	left: 210px
 	bottom: 40px
 	z-index: 3
+	.arrows-down
+		width: 22.2px
+		height: 22.9px
+
+//                                    SECTION SURF
+.surf
+	position: relative
+	background-position: right 330px
+	background-repeat: no-repeat
+	background-size: auto
+.surf__subtitle
+	text-align: right
+	margin-right: 80px
+	margin-top: -86px
+
+//                                    surf-slider
+.surf-slider
+	position: relative
+	overflow: hidden
+	padding-top: 110px
+	.btn1
+		opacity: 0
+	.surf-box
+		background-position: center
+		background-repeat: no-repeat
+		background-size: cover
+		border-radius: 10px
+		&:nth-child(4n + 3)
+			margin-top: 32px
+		&:nth-child(4n + 1)
+			margin-top: 89px
+		&::before
+			content: ''
+			position: absolute
+			width: 100%
+			height: 100%
+			// устанавливаем оверлей через rgba(), opacity применится ко всем дочерним элементам
+			background-color: rgba(#1c2121, .85)
+			transition: background-color .25s ease-out
+		&__inner
+			position: relative
+			min-height: 750px
+			padding: 72px 40px 80px
+			padding-right: 0
+			&-title, &-location
+				z-index: 10
+	.swiper-slide-active, .surf-box:hover
+		z-index: 20
+		.btn1
+			opacity: 1
+		&.surf-box
+			&::before
+				background-color: rgba(#1c2121, .3)
+	.surf-box:hover
+		z-index: 30
+
+.surf-box__inner-title
+	font-weight: 800
+	font-size: 40px
+	line-height: 36px
+	width: 140px
+.surf-box__inner-location
+	font-weight: 400
+	font-size: 18px
+	line-height: 22
+	letter-spacing: 8px
+	position: absolute
+	// так как обьект перевёрнытый чтобы спозиционировать его убираем ширину (невидимую)
+	width: 0
+	left: 48px
+	bottom: -117px
+	transform: rotate(-90deg)
+	span
+		font-weight: 100
+
+//                                    map-slider
+.slider-map
+	max-width: 1200px
+	min-height: 635px
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center
+	// позиционирование по центру
+	margin: 0 auto
+
+.surf-icon, .water-icon, .wind-icon
+	height: 23.8px
+	width: 100%
+
+.slider-map__item
+	position: relative
+	.slider-map__circle
+		width: 24px
+		height: 24px
+		background-color: $accent
+		border-radius: 10em
+		box-shadow: 0 0 35px rgba($accent, .85)
+		cursor: pointer
+		position: relative
+		transition: box-shadow .25s ease-out
+		&:hover
+			box-shadow: 0 0 35px rgba($accent, .85), 0 0 35px rgba(#6efd00, .85)
+		&::before
+			content: ''
+			background-image: url(../images/mini-marker.png)
+			display: block
+			background-size: contain
+			width: 14px
+			height: 17px
+			position: absolute
+			left: 30px
+			transform: translateX(-50%)
+			top: -20px
+			transform: scale(0)
+			transition: transform .25s ease-out
+		&::after
+			content: ''
+			background-image: url(../images/map-drop.png)
+			position: absolute
+			width: 24px
+			height: 32px
+			position: absolute
+			top: -12px
+			left: 50%
+			transform: translateX(-50%)
+			display: none
+
+.slider-map__content
+	background: rgba(#0F1010, .7)
+	position: absolute
+	bottom: 50px
+	right: 0
+	border-radius: 8px
+	width: 283px
+	height: 216px
+	padding: 28px 32px 0 32px
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	transform: scale(0)
+	transition: transform .3s ease-out
+
+.slider-map__content-row
+	display: flex
+	justify-content: space-between
+	padding-bottom: 30px
+
+.slider-map__content-number
+	font-weight: 800
+	font-size: 16px
+	line-height: 23px
+	margin-top: 5px
+
+.slider-map__content-name
+	font-weight: 300
+	font-size: 10px
+	line-height: 12px
+
+.slider-map__content-title
+	font-weight: 800
+	font-size: 18px
+	line-height: 26px
+	// паддингом и маржином позиционируем псевдоэлемент относительно родителя
+	padding-bottom: 8px
+	margin-bottom: 8px
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 80px
+		height: 1px
+		background: $accent
+
+.slider-map__content-subtitle
+	font-weight: 400
+	font-size: 16px
+	text-transform: capitalize
+	line-height: 19px
+
+.slider-map__content-link
+	margin-top: 2px
+	.arrows-right
+		width: 16px
+		height: 13.5px
+
+.slider-map__content-item
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+
+.swiper-slide-thumb-active
+	z-index: 5
+	.slider-map__circle
+		cursor: default
+		box-shadow: 0 0 35px rgba($accent, .85), 0 0 35px rgba(#6efd00, .85)
+		&::before
+			transform: scale(1)
+		&::after
+			display: block
+	.slider-map__content
+		transform: scale(1)
+
+.slider-map__item--1
+	top: 335px
+	left: 0
+.slider-map__item--2
+	top: 270px
+	left: 0
+.slider-map__item--3
+	top: 318px
+	left: 36px
+.slider-map__item--4
+	top: 498px
+	right: 40px
+.slider-map__item--5
+	top: 213px
+	right: 70px
+.slider-map__item--6
+	top: 550px
+	right: 114px
+.slider-map__item--7
+	top: 394px
+	right: 96px
+.slider-map__item--8
+	top: 509px
+	left: 38px
+
+//                                       SECTION TRAVEL
+.holder
+	background-position: bottom right
+	background-repeat: no-repeat
+	.title__bg > h3
+		right: -100px
+	.navigation
+		top: 168px
+
+.holder-slider
+	padding-bottom: 140px
+	&__subtitle
+		text-align: right
+		padding-right: 80px
+		padding-top: 92px
+	&__head
+		background-repeat: no-repeat
+		background-position: top left
+		min-height: 780px
+	&__descr
+		background-repeat: no-repeat
+		background-position: right bottom
+		padding: 0 0 127px 132px
+		margin-top: -100px
+		width: auto
+		mit-height: 380px
+
+.holder-slider__info
+	display: flex
+	justify-content: space-around
+
+.holder-slider__info-item
+	position: relative
+	// для позиционирования реревёрнутых элементов задаём минимальную вы
+	min-height: 200px
+	margin-bottom: 66px
+
+.holder-slider__info-subtitle
+	opacity: 0.5
+	font-weight: 400
+	font-size: 18px
+	line-height: 22px
+	letter-spacing: 8px
+	// так как обьект перевёрнытый чтобы спозиционировать его устанавливаем ширину ему равную высоте родителя,
+	// текст выравниваем по правому краю и абслютно позиционируем
+	width: 200px
+	height: 0
+	position: absolute
+	top: 95px
+	text-align: right
+	left: -97px
+	transform: rotate(-90deg)
+	white-space: nowrap
+
+
+.holder-slider__info-title
+	font-weight: 800
+	font-size: 40px
+	line-height: 36px
+	padding-left: 40px
+	.holder-pricing__span
+		opacity: .75
+		font-size: 14px
+		line-height: 36px
+		letter-spacing: 5.25px
+		font-weight: 400
+		position: absolute
+		top: 32px
+		right: 0
+		white-space: nowrap
+
+//                                          section SLEEP
+
+.stars
+	display: inline-block
+	margin-left: 10px
+	.star
+		width: 55px
+		height: 55px
+		margin: 0 -12px
+		padding-bottom: 8px

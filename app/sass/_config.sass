@@ -20,7 +20,7 @@
 $accent: #4AF6CD // Accent Color
 $textcolor: #ECECECFF // Text Color
 $dark: #202328
-$deep: #171A1A
+$deep: #171919
 $middle-gray: rgba(#6F7A8B, .75)
 $fontsize: 14px // Body Font Size
 $lineheight: 1.7 // Document Line Height
@@ -51,6 +51,7 @@ $gutter: $grid-gutter-width
 		font-weight: $fweight
 		src: url($furl) format('woff2')
 
+@include font('firasans-f', normal, 100, '../fonts/FiraSans-Thin.woff2')
 @include font('firasans-f', normal, 300, '../fonts/FiraSansLight.woff2')
 @include font('firasans-f', normal, 400, '../fonts/FiraSansRegular.woff2')
 @include font('firasans-f', normal, 500, '../fonts/FiraSansMedium.woff2')
@@ -83,4 +84,4 @@ body
 	position: relative
 	overflow-x: hidden
 	background-color: $deep
-
+	text-transform: uppercase

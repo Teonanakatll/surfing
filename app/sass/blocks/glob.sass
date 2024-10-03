@@ -1,10 +1,18 @@
+
+.container
+	max-width: 1920px
+	margin: 0 auto
+
 footer
 	height: 100vh
+	background-color: $accent
+
 a
 	display: inline-block
 	text-decoration: none
+	color: $textcolor
 
-.suptitle-left
+.headline-left
 	font-size: 22px
 	line-height: 32px
 	letter-spacing: 7.33px
@@ -23,7 +31,193 @@ a
 		left: 0
 		top: 50%
 
+.headline-right
+	font-size: 22px
+	line-height: 32px
+	letter-spacing: 7.33px
+	text-transform: uppercase
+	display: inline-block
+	opacity: 0.5
+	// задаём паддинг с учётом ширины псевдоэлемента для абсолютного позиционирования
+	padding-right: 103px
+	position: relative
+	text-align: left
+	&::before
+		content: ''
+		width: 80px
+		height: 1px
+		position: absolute
+		background-color: #fff
+		right: 0px
+		top: 50%
+
 ul, li
 	margin: 0
 	padding: 0
 	list-style-type: none
+
+.navigation
+	position: absolute
+	top: 0
+	right: 0
+	z-index: 10
+	width: 69px
+	display: flex
+	align-items: center
+	justify-content: space-between
+	margin-top: 40px
+	margin-right: 80px
+.navigation--section
+	top: 3px
+	opacity: 0.25
+
+.title
+	.title__bg
+		font-size: 200px
+		line-height: 156px
+		font-weight: 800
+		width: 467px
+		// opacity спана не перебивается в дочерних элементах
+		color: rgba(#fff, .02)
+		position: relative
+		// со строчным элементом трансформ не работает
+		// transform: translateX(-50px)
+		left: -50px
+		h3
+			margin: 0
+			font-size: 80px
+			font-weight: 800
+			color: #fff
+			position: absolute
+			top: -35px
+			right: -6px
+			&::before
+				content: ''
+				background: $accent
+				width: 80px
+				height: 1px
+				position: absolute
+				top: 0
+				right: 0
+
+
+.subtitle
+	// для выравнивания текста в блоке родителю присваиваем display: inline-block
+	display: inline-block
+	text-align: right
+	&__head
+		font-weight: 800
+		font-size: 40px
+	span
+		font-weight: 100
+
+.descr
+	text-align: left
+	display: inline-block
+	&__head
+		font-weight: 800
+		font-size: 40px
+	img
+		margin-left: 25px
+	span
+		font-weight: 100
+
+.btn1
+	position: absolute
+	bottom: 0
+	left: 50%
+	transform: translateX(-50%)
+	font-weight: 800
+	font-size: 40px
+	line-height: 40px
+	display: inline
+	white-space: nowrap
+	display: flex
+	align-items: center
+	transition: opacity .25s ease-out
+	span
+		background-color: $accent
+		padding: 17px
+		padding-right: 57px
+		margin-left: 19px
+		position: relative
+		&::before
+			content: ''
+			width: 20px
+			height: 1px
+			background: #fff
+			position: absolute
+			left: -10px
+			top: 50%
+	.arrows
+		position: relative
+		right: 41px
+
+.surf
+	padding: 195px 0 0
+
+.travel, .sleep
+	padding-bottom: 250px
+
+.travel
+	margin-top: 310px
+
+.sleep
+	margin-top: 95px
+
+	//																								стили инпутов
+.quantity 
+	display: inline-block
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+	-webkit-appearance: none
+	margin: 0
+
+input[type=number]
+	-moz-appearance: textfield
+
+.quantity input 
+	width: 45px
+	height: 42px
+	line-height: 1.65
+	float: left
+	display: block
+	padding: 0
+	margin: 0
+	padding-left: 20px
+	color: #fff
+	font-weight: 800
+	line-height: 36
+	background: transparent
+
+.quantity input:focus 
+	outline: 0
+
+.quantity-nav 
+	float: left
+	position: static
+	height: 42px
+
+.quantity-button 
+	position: relative
+	cursor: pointer
+	width: 20px
+	text-align: center
+	color: #fff
+	font-size: 13px
+	line-height: 1.7
+	transform: translateX(-100%)
+	user-select: none
+	color: $accent
+	top: 45px
+
+.quantity-button.quantity-up 
+	position: absolute
+	height: 50%
+	right: -25px
+
+.quantity-button.quantity-down 
+	position: absolute
+	right: 0
+	height: 50%

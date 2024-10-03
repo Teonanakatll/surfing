@@ -45,15 +45,15 @@ function fonts() {
 }
 
 function images() {
-	return src(['app/images/src/*.*', '!app/images/src/*.svg'])
+	return src(['app/images/src/**/*.*', '!app/images/src/**/*.svg'])
 		.pipe(newer('app/images'))  // проверяет есть ли данные картинки в dist
-		.pipe(avif({ quality : 60 }))
+		.pipe(avif({ quality : 55 }))
 
-		.pipe(src('app/images/src/*.*'))
+		.pipe(src('app/images/src/**/*.*'))
 		.pipe(newer('app/images'))  // проверяет есть ли данные картинки в dist
 		.pipe(webp())
 
-		.pipe(src('app/images/src/*.*'))
+		.pipe(src('app/images/src/**/*.*'))
 		.pipe(newer('app/images'))  // проверяет есть ли данные картинки в dist
 		.pipe(imagemin())
 
@@ -67,7 +67,11 @@ function sprite() {
 	if (fs.existsSync(spritePath)) {
 		fs.unlinkSync(spritePath);
 	}
-	return src('app/images/*.svg')
+	return src(['app/images/**/*.svg',
+		
+							'!app/images/src/**/*.*',
+							'!app/images/map.svg',
+							'!app/images/avia-logo.svg'])
 		.pipe(svgSprite({
 			mode: {
 				stack: {
@@ -203,6 +207,7 @@ function cleanDist() {
 function building() {
 	return src([
 		'app/css/style.min.css',
+		'app/css/noscript/noscript-styles.css',
 		'app/images/*.*',
 		'!app/images/*.svg',
 		'!app/images/stack/sprite.stack.html',

@@ -1,4 +1,3 @@
-import { defaults } from "autoprefixer";
 import gsap from "gsap"
 
 export function animate() {
@@ -18,9 +17,9 @@ export function animate() {
 	let arrows = () => {
 		const tlArrows = gsap.timeline({ defaults: { duration: .6 }, repeat: -1, repeatDelay: 3});
 		tlArrows
-			.from('.header__arrows', {opacity: 0, y: 50, duration: 1.5})
-			.to('.header__arrows', { y: -70, delay: 5})
-			.to('.header__arrows', { y: 0, ease: "bounce.out"})
+			// .from('.arrows-down', {opacity: 0, y: -50})
+			.to('.arrows-down', { y: -70, delay: 5})
+			.to('.arrows-down', { y: 0, ease: "bounce.out"})
 		return tlArrows;
 	}
 
@@ -35,7 +34,7 @@ export function animate() {
 		// .add(arrows)
 	// tl.to('.ico-span', {opacity: 0.3, scale: 3, delay: 2})
 
-	// останавливает анимацию при наведении мыши
+	// останавливает анимацию при наведении мыши.
 	let ar = arrows();
 	const arrowsSto = document.querySelector('.header__arrows');
 	arrowsSto.addEventListener('mouseover', () => {
