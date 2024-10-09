@@ -1,0 +1,674 @@
+@include breakpoint-down(xxl)
+	.logo svg
+		width: 100px
+		height: 171px
+	.header__title
+		font-size: 130px
+		line-height: 116px
+		left: 60px
+		top: 5px
+	.menu
+		margin-top: 20px
+	.header__search > .search
+		margin: 5px 0 15px
+	.header__date
+		font-size: 60px
+		span
+			margin-bottom: 15px
+			padding-top: 10px
+			font-size: 14px
+	.header__arrows
+		left: 150px
+	.slider-dots
+		width: 880px
+
+	.surf
+		background-position: right 100px
+
+	.slider-map
+		max-width: 940px
+		height: 530px
+	.slider-map__content
+		bottom: 550px
+		right: -35px
+	.swiper-slide-thumb-active
+		.slider-map__content
+			transform: scale(.9)
+
+	.surf-box__inner
+		min-height: 650px
+	.title > .title__bg
+		font-size: 150px
+		line-height: 116px
+		width: 350px
+		h3
+			font-size: 65px
+
+	.travel
+		margin-top: 200px
+		.title
+			&__bg
+				width: 505px
+			h3
+				right: 0
+
+	.holder-slider__descr
+		padding-left: 50px
+
+	.sleep
+		padding-bottom: 150px
+		.title__bg
+			h3
+				right: -60px
+
+.shop
+	.title__bg
+		h3
+			right: -30px
+	.shop__slider-inner
+		padding-left: 100px
+	.shop__extras
+		margin-right: 50px
+.shop__extras-box
+	&:first-child
+		margin-right: 10px
+
+
+@include breakpoint-down(366xxl)
+	.header__aside
+		height: 110px
+		padding-right: 25px
+		background-color: rgba(#000, .3)
+		border-radius: 8px
+		backdrop-filter: blur(5px)
+		border-right: none
+		display: flex
+		justify-content: space-between
+		max-width: 100%
+	.menu
+		margin-top: 0
+		margin-left: 25px
+	.menu__list
+		display: flex
+		align-items: end
+		justify-content: center
+		a
+			padding: 15px 20px
+			span
+				margin-bottom: 0
+	.header__search > .search
+		margin: 35px 15px 15px
+	.header__date
+		padding-top: 10px
+		padding-left: 10px
+		span
+			width: 80px
+	.header__location
+		margin-top: 37px
+		margin-left: 20px
+	.slider-item__info
+		right: 50px
+	.slider-item__info-title
+		font-size: 65px
+	.header__arrows
+		left: 25px
+	.slider-dots
+		margin-right: 50px
+	.navigation
+		margin-top: 30px
+		margin-right: 50px
+	.subtitle
+		margin-right: 50px
+
+@media (max-width: 1340px)
+	.header__map
+		svg
+			width: 500px
+			height: 250px
+
+@include breakpoint-down(xl)
+	.surf
+		background-size: 100px
+		background-position: right 180px
+		padding-top: 150px
+	.surf-box__inner
+		min-height: 550px
+		.btn1
+			transform: scale(.8) translateX(-62%)
+			bottom: -8px
+	.subtitle
+		margin-right: 50px
+
+	.holder-slider__descr
+		padding-left: 25px
+		padding-bottom: 80px
+		margin-bottom: -50px
+
+	.travel
+		margin-top: 150px
+		padding-bottom: 50px
+		background-size: 180px
+		background-position: right 1080px
+		.holder-slider__descr
+			height: 280px
+			background-size: 580px
+			background-position: right -120px
+			img
+				margin-left: 5px
+	
+	.sleep
+		background-size: 140px
+		background-position: right 1080px
+		padding-bottom: 50px
+
+	.holder-slider__info-title
+		font-size: 27px
+		padding-left: 30px
+		line-height: 27px
+		.quantity input
+			font-size: 27px
+			width: 33px
+		.quantity-nav
+			.quantity-button
+				top: 27px
+		.holder-pricing__span
+			letter-spacing: 2px
+			line-height: 14px
+			font-size: 13px
+			right: 0
+	.holder-slider__info-subtitle
+		font-size: 14px
+		letter-spacing: 5px
+		margin-top: 3px
+
+	.holder-slider__info-item:last-child .holder-slider__info-title
+		width: auto
+	.holder-slider__btn
+		transform: scale(.8)
+		position: relative
+		top: 50px
+
+	.shop__slider-inner
+		padding-left: 50px
+
+	.surfboard-box__content
+		font-size: 21px
+		margin-left: 0
+		width: 230px
+	.surfboard-box__circle::after
+		width: 50px
+
+	.surfboard__position--3	
+		.surfboard-box__circle
+			&.active
+				&::after
+					left: -72px
+				& + .surfboard-box__content
+					left: -455px
+
+	footer
+		margin-top: 200px
+
+	.shop__extras-title
+		text-align: center
+
+@include breakpoint-down(lg)
+	.slider-dots
+		width: 650px
+		margin-bottom: 15px
+		margin-right: 37px
+	.slider-dots__item::before
+		top: 5px		
+	.slider-item__info
+		right: 35px
+		bottom: 90px
+	.dot-box_number
+		font-size: 25px
+	.slider-item__info-title
+		font-size: 55px
+		margin-bottom: 25px
+		line-height: 43px
+		margin-bottom: 35px
+	.headline-left
+		font-size: 16px
+		line-height: 18px
+		padding-left: 75px
+		letter-spacing: 5px
+		margin-bottom: 15px
+		&::before
+			width: 60px
+	.headline-right
+		font-size: 16px
+		line-height: 18px
+		padding-right: 75px
+		letter-spacing: 5px
+		margin-bottom: 15px
+		&::before
+			width: 60px
+	.slider-item__info-text
+		font-size: 30px
+		line-height: 23px
+		margin-bottom: 15px
+	.menu-btn
+		display: block
+		right: 35px
+		&.active
+			top: 125px
+	.menu
+		position: absolute
+		background-color: rgba(#000, .95)
+		backdrop-filter: blur(5px)
+		margin: 0
+		height: 100%
+		width: 100vw
+		transform: translateY(-100%)
+
+		transition: transform .5s ease-out, height .25s ease
+		&.active
+			transform: translateY(0)
+		&__list
+			height: 100%
+			a
+				padding: 15px 30px 23px
+	.header__search > .search
+		margin-left: 35px
+	.header__arrows
+		bottom: 15px
+	.navigation
+		margin-right: 35px
+
+	.surf
+		background-size: 70px
+		padding-top: 120px
+	.surf-slider
+		padding-top: 100px
+		margin-top: 30px
+	.surf-box__inner
+		min-height: 450px
+		padding-left: 50px
+		&-location
+			left: 25px
+		&-title
+			position: relative
+			bottom: 35px
+
+	.subtitle__head
+		line-height: 23px
+		font-size: 30px
+	.subtitle
+		margin-right: 35px
+	.slider-map
+		max-width: 700px
+		height: 380px
+		position: relative
+		top: 30px
+		// padding-bottom: 30px
+		.slider-map__circle
+			height: 12px
+			width: 12px
+			&::before
+				display: none
+			&::after
+				width: 12px
+				height: 18px
+				background-size: contain
+				top: -6px
+	.slider-map__content
+		bottom: 380px
+		right: -65px
+		padding: 15px 15px 0
+	.slider-map__item--1
+		.slider-map__content
+			left: -20px
+	.slider-map__item--8
+		.slider-map__content
+			right: 40px
+	.swiper-slide-thumb-active
+		.slider-map__content
+			transform: scale(.8)
+
+	.title
+		.title__bg
+			font-size: 120px
+			line-height: 80px
+			left: -30px
+			h3
+				font-size: 45px
+				top: -25px
+				right: 75px
+
+	.travel
+		background-position: right 919px
+		background-size: 200px
+		padding-bottom: 0
+		.title
+			&__bg
+				width: 402px
+			h3
+				right: 0
+		.headline-right
+			margin-bottom: 5px
+
+	.holder-slider__head
+		min-height: 680px
+		background-size: cover
+	.descr__head
+		line-height: 23px
+		font-size: 30px
+	.holder-slider__descr
+		margin-bottom: -60px
+
+	.sleep
+		background-position: right 925px
+		padding-bottom: 0
+		.title__bg
+			h3
+				right: 20px
+		.holder-slider__descr
+			background-size: 350px
+
+	.shop
+		.title__bg
+			h3
+				right: 50px
+		.shop__slider-inner
+			padding-left: 35px
+		.shop__extras
+			margin-left: 35px
+		.descr__head-shop
+			line-height: 30px
+			margin-bottom: 0
+
+	.stars
+		margin-bottom: 5px
+
+	.shop__slider-inner
+		display: block
+		.shop__slider-info
+			margin-bottom: 50px
+			margin-top: 50px
+		.surf
+			width: 300px
+		.shop__slider-content
+			display: inline-block
+		.shop__extras
+			display: inline-block
+			margin-left: 60px
+			margin-right: 0
+			position: relative
+			top: 90px
+			picture
+				margin-bottom: 0
+			img
+				width: 70px
+			&-box
+				width: 130px
+			&-name
+				letter-spacing: 3px
+				margin-bottom: 5px
+
+	.surfboard-box__content
+		font-size: 19px
+		margin-left: -30px
+		width: 203px
+	.surfboard-box__circle
+		z-index: 10
+	.surfboard-box__circle::after
+		width: 30px
+
+	.surfboard__position--3	
+		.surfboard-box__circle
+			&.active
+				&::after
+					left: 32px
+				& + .surfboard-box__content
+					left: -40px
+
+	footer
+		margin-top: 100px
+
+@include breakpoint-down(md)
+	.slider-dots
+		width: 80%
+	.dot-box_number
+		font-size: 19px
+		line-height: 15px
+	.slider-dots__item::before
+		top: 0
+
+	.slider-map
+		max-width: 530px
+		height: 250px
+	.slider-map__content
+		bottom: 250px
+		right: -85px
+
+	.surf
+		padding-top: 90px
+		.subtitle
+			margin-top: 20px
+
+	.holder-slider__info
+		display: block
+		padding-left: 25px
+		// width: auto
+		&-item
+			min-height: auto
+			margin-bottom: 50px
+		&-subtitle
+			transform: rotate(0)
+			top: -15px
+			line-height: 0
+			width: auto
+			left: 0
+		&-title
+			padding: 0
+			font-size: 24px
+			.holder-pricing__span
+				left: 42px
+				top: 26px
+				text-transform: lowercase
+
+	.travel
+		background-position: right 794px
+		background-size: 250px
+		margin-top: 100px
+
+	.holder-slider
+		padding-bottom: 100px
+		.btn1
+			bottom: -30px
+			transform: scale(.8) translateX(-60%)
+
+	.shop__slider-inner
+		.shop__extras
+			margin-left: 0
+			float: right
+			margin-top: 250px
+			margin-right: 15px
+
+	.surfboard__position--3	
+		.surfboard-box__circle
+			&.active
+				&::after
+					display: none
+				& + .surfboard-box__content
+					left: -80px
+
+	.surfboard-box__circle::after
+		display: none
+
+	.surfboard-box__content
+		font-size: 18px
+		margin-left: 0
+		width: 203px
+		transform: translate(0)
+
+	.surfboard-box__circle.active+.surfboard-box__content
+		left: 30px
+
+@include breakpoint-down(sm)
+	.header
+		overflow: hidden
+	.header__aside
+		padding: 0
+		height: auto
+		display: block
+		padding-bottom: 15px
+	.header__search > .search
+		margin-left: 15px
+		margin-top: 25px
+	.header__date
+		font-size: 50px
+		line-height: 45px
+		padding: 0
+		span
+			margin: 0 0 0 10px
+			padding: 0
+	.header__location
+		margin-left: 0
+		margin-top: 10px
+	.header__title
+		font-size: 90px
+		width: 200px
+		line-height: 100px
+	.header__map
+		width: 480px
+		height: 10px
+	.menu-btn
+		right: 20px
+	.menu
+		transform: translateY(-255%)
+		&__list
+			justify-content: space-evenly
+		a
+			padding: 15px 20px 23px
+		&.active
+			transform: translateY(-148%)
+			height: 118px
+	.slider-item__info
+		right: 20px
+		bottom: 15px
+	.slider-item__info-title
+		font-size: 45px
+		margin-left: 130px
+		text-align: right
+	.slider-dots
+		display: none
+	.navigation
+		margin-right: 20px
+
+	.slider-map
+		.slider-map__wrapper
+			display: block
+			.slider-map__item
+				position: absolute
+				height: 15px
+				width: 15px
+				top: 50%
+				left: 50%
+				z-index: -1
+				opacity: 0
+				transform: translate(-50%, -25%) scale(0.1)
+				transition: transform .5s ease-out, opacity .5s ease-out
+				&.swiper-slide-thumb-active
+					transform: scale(.8)
+					opacity: 1
+					z-index: 5
+			.slider-map__circle
+				margin: 0 auto
+				display: none
+			.slider-map__content
+				top: 50%
+				left: 50%
+				transform: translate(-60%, -50%)
+	.title
+		.title__bg
+			font-size: 100px
+			line-height: 60px
+			left: -30px
+			width: 300px
+			h3
+				font-size: 35px
+				top: -25px
+				right: 75px
+	.subtitle
+		margin-right: 20px
+		.headline-left
+			margin-bottom: 20px
+			letter-spacing: 3px
+
+	.surf-box__inner
+		min-height: 400px
+		&-title
+			font-size: 34px
+		&-location
+			bottom: -120px
+			font-size: 16px
+			letter-spacing: 5px
+		.btn1
+			transform: scale(.6) translateX(-86%)
+			bottom: -14px
+	.travel
+		background-size: 200px
+		background-position: right 730px
+		margin-top: 80px
+		.title__bg
+			h3
+				right: -10px
+		.holder-slider__descr
+			background-size: 300px
+			background-position: right -20px
+			.descr__head
+				font-size: 27px
+			img
+				width: 40px
+
+	.holder-slider__head
+		min-height: 600px
+
+	.subtitle__head
+		font-size: 27px
+		span
+			display: none
+
+	.sleep
+		background-size: 117px
+		background-position: right 795px
+		.holder-slider__descr
+			background-size: 250px
+			background-position: right center
+
+	.shop
+		.title__bg
+			h3
+				right: 50px
+
+	.surfboard__position--3	
+		.surfboard-box__circle
+			&.active
+				&::after
+					display: none
+				& + .surfboard-box__content
+					left: -165px
+					top: 30px
+
+	.surfboard-box__circle.active+.surfboard-box__content
+		left: -20px
+		top: 28px
+
+	.surfboard-box.surfboard__position--1 .surfboard-box__content
+		left: -170px
+		top: 28px
+
+	.shop__slider-inner .shop__extras
+		margin: -30px auto
+		left: 50%
+		transform: translateX(-56%)
+		float: none
+		&-name
+
+	.shop__extras
+		height: 350px
+		
+
