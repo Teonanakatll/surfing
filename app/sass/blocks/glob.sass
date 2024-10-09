@@ -3,10 +3,6 @@
 	max-width: 1920px
 	margin: 0 auto
 
-footer
-	height: 100vh
-	background-color: $accent
-
 a
 	display: inline-block
 	text-decoration: none
@@ -29,7 +25,7 @@ a
 		position: absolute
 		background-color: #fff
 		left: 0
-		top: 50%
+		top: 42.5%
 
 .headline-right
 	font-size: 22px
@@ -49,8 +45,8 @@ a
 		position: absolute
 		background-color: #fff
 		right: 0px
-		top: 50%
-
+		top: 42.5%
+		
 ul, li
 	margin: 0
 	padding: 0
@@ -105,6 +101,8 @@ ul, li
 	// для выравнивания текста в блоке родителю присваиваем display: inline-block
 	display: inline-block
 	text-align: right
+	margin-right: 80px
+	margin-top: -86px
 	&__head
 		font-weight: 800
 		font-size: 40px
@@ -119,6 +117,8 @@ ul, li
 		font-size: 40px
 	img
 		margin-left: 25px
+		position: relative
+		bottom: 5px
 	span
 		font-weight: 100
 
@@ -126,14 +126,15 @@ ul, li
 	position: absolute
 	bottom: 0
 	left: 50%
+	margin-left: 10px
 	transform: translateX(-50%)
 	font-weight: 800
 	font-size: 40px
 	line-height: 40px
-	display: inline
 	white-space: nowrap
 	display: flex
 	align-items: center
+	justify-content: space-between
 	transition: opacity .25s ease-out
 	span
 		background-color: $accent
@@ -164,6 +165,9 @@ ul, li
 
 .sleep
 	margin-top: 95px
+
+.shop
+	padding-top: 30px
 
 
 .stars

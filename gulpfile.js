@@ -214,9 +214,12 @@ function building() {
 		'app/images/sprite.svg',
 		'app/fonts/*.*',
 		'app/js/main.min.js',
+		'app/pages/*.html',
+		'app/parts/**/*.html',
 		'app/*.html'
 	], {base : 'app'})       //  сохраняет структуру папок
 		.pipe(dest('dist'))    //  копирует всё в папку dist
+		
 }
 
 

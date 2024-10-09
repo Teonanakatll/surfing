@@ -1,20 +1,31 @@
 import Swiper from "swiper"
 
+import gsap from "gsap"
+import LocomotiveScroll from 'locomotive-scroll'
 import {animate, map} from "./gsap-test"
 import { setBackgrounds } from "./set-background"
 import { quantity } from "./quantity"
 
+const locomotiveScroll = new LocomotiveScroll()
+
 import {EffectCube, EffectFade, Parallax, Mousewheel, Controller, Pagination, Scrollbar, Navigation, Thumbs, Autoplay } from 'swiper/modules'
 
 document.addEventListener('DOMContentLoaded', () => {
-	
+
+
 	const swiperDots = new Swiper('.slider-dots', {
 		modules: [Controller],
 		// mousewheel: {
 		// 	invert: true,
 		// },
-		slidesPerView: 4,
-		spaceBetween: 40,
+		slidesPerView: 3,
+		spaceBetween: 30,
+		breakpoints: {
+			768: {
+				slidesPerView: 4,
+				spaceBetween: 40,
+			}
+		},
 		slideToClickedSlide: true,
 		// autoplay: true,
 		// loop:	true,
@@ -22,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	const swiperTop = new Swiper('.header__slider', {
-		modules: [Mousewheel, Navigation, EffectFade, Thumbs],
+		modules: [Navigation, EffectFade, Thumbs],
 		// autoplay: {
 		// 	delay: 1000,
 		// },
@@ -41,9 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		// 	el: '.header__slider-pagination',
 		// 	clickable: true,
 		// },
-    mousewheel: {
-			invert: true,
-	},
 		// centeredSlides: true,
 		loop: true,
 		speed: 1500,
@@ -55,10 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	const swiperSurf = new Swiper('.surf-slider', {
-		modules: [Mousewheel, Navigation, Thumbs],
-		// mousewheel: {
-		// 	invert: true,
-		// },
+
+		modules: [Navigation, Thumbs],
 		thumbs: {
 			swiper: swiperMap,
 		},
@@ -67,18 +73,26 @@ document.addEventListener('DOMContentLoaded', () => {
 			nextEl: '.next',
 		},
 		centeredSlides: true,
-		slidesPerView: 4,
-		speed: 1500,
+		slidesPerView: 2,
+		breakpoints: {
+			992: {
+				slidesPerView: 4,
+			},
+			768: {
+				slidesPerView: 3.2,
+			},
+			576: {
+				slidesPerView: 2.5,
+			},
+		},
 		spaceBetween: -50,
+		speed: 1500,
 		loop: true,
 		slideToClickedSlide: true,
 	})
 
 	const swiperTravel = new Swiper('.holder__slider', {
-		modules: [Mousewheel, Navigation, Parallax],
-		mousewheel: {
-			invert: true,
-		},
+		modules: [Navigation, Parallax],
 		loop: true,
 		speed: 2000,
 		navigation: {
@@ -88,19 +102,27 @@ document.addEventListener('DOMContentLoaded', () => {
 		parallax: true,
 	})
 
-	// const swiperSleep = new Swiper('.sleep-slider', {
-	// 	modules: [Mousewheel, Navigation, Parallax],
-	// 	// mousewheel: {
-	// 	// 	invert: true,
-	// 	// },
-	// 	loop: true,
-	// 	speed: 2000,
-	// 	navigation: {
-	// 		prevEl: '.prev',
-	// 		nextEl: '.next',
-	// 	},
-	// 	parallax: true,
-	// })
+	const swiperShop = new Swiper('.shop__slider', {
+		modules: [Navigation, Parallax],
+		loop: true,
+		speed: 2000,
+		slidesPerView: 1,
+		navigation: {
+			prevEl: '.prev',
+			nextEl: '.next',
+		},
+		parallax: true,
+	})
+
+
+	$('.surfboard-box__circle').on('click', function() {
+		$(this).toggleClass('active');
+	})
+
+	$('.menu-btn__inner').on('click', function() {
+		$('.menu-btn').toggleClass('active');
+		$('.menu').toggleClass('active');
+	})
 
 	// swiperTop.controller.control = swiperDots
 	// swiperDots.controller.control = swiperTop
@@ -113,10 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// скрипт автоматически находит классы элементов начинающихся с  bg-- и подставляет нужный формат изображения
 	// также необходимо прописать фоллбак на случай если у пользователя отключен js: style="background-image: url('images/header-bg.jpg');"
-	// setBg();
 	setBackgrounds();
 
 	// скрипт обработки инпутов
 	quantity();
+
+
 
 })

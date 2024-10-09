@@ -1,5 +1,6 @@
 .header
 	height: 100vh
+	min-width: 100vw
 	position: relative
 	&__title
 		font-weight: 800
@@ -14,6 +15,7 @@
 		z-index: 4
 
 .slider-dots
+	overflow: hidden
 	max-width: 920px
 	width: 100%
 	position: absolute
@@ -33,26 +35,27 @@
 			height: 4px
 			position: absolute
 			left: 0
-			top: 0
-		.dot-box
-			width: 100%
-			height: 100%
-			display: flex
-			align-items: end
-			justify-content: space-between
-			&_number
-				font-weight: 800
-				font-size: 34px
-				line-height: 18px
-			&_name
-				font-weight: 300
-				font-size: 16px
-				line-height: 10px
-				text-transform: capitalize
-		// border: 1px solid $accent
 	.swiper-slide-thumb-active
 		&::before
 			background: $accent
+
+.dot-box
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding-top: 9px
+	&_number
+		font-weight: 800
+		font-size: 34px
+		line-height: 18px
+	&_name
+		font-weight: 300
+		font-size: 16px
+		line-height: 10px
+		text-transform: capitalize
+
 
 
 .slider-item__info
@@ -98,9 +101,10 @@
 	max-width: 168px
 	border-right: 1px solid rgba(#fff, .25)
 	text-align: center
-	.logo svg
-		width: 168px
-		height: 290px
+
+.logo svg
+	width: 167px
+	height: 290px
 
 .menu
 	margin-top: 40px
@@ -125,7 +129,38 @@
 		width: 39px
 	.nav-ico-4
 		height: 44px
-		width: 66px
+		width: 42px
+
+.menu-btn
+	position: absolute
+	right: 30px
+	top: 85px
+	z-index: 10
+	display: none
+	transition: top .5s ease-out
+	&__inner
+		width: 35px
+		height: 35px
+		border-radius: 8px
+		border: 1px solid $accent
+		cursor: pointer
+		display: flex
+		align-items: center
+		justify-content: space-around
+		flex-direction: column
+		padding: 5.5px 0
+	&__text
+		position: absolute
+		left: -50px
+		top: -3px
+		top: 50%
+		transform: translateY(-50%)
+	&__line
+		width: 20px
+		height: 3px
+		// margin-bottom: 5px
+		background-color: $accent
+		border-radius: 2px
 
 
 .header__search > .search
@@ -157,6 +192,8 @@
 
 .header__slider
 	position: relative
+	&-wrapper
+		max-width: 100%
 	&-item
 		height: 100vh
 		// background-image: url(../../images/header-bg.jpg)
@@ -203,8 +240,7 @@
 	background-size: auto
 .surf__subtitle
 	text-align: right
-	margin-right: 80px
-	margin-top: -86px
+
 
 //                                    surf-slider
 .surf-slider
@@ -213,39 +249,39 @@
 	padding-top: 110px
 	.btn1
 		opacity: 0
-	.surf-box
-		background-position: center
-		background-repeat: no-repeat
-		background-size: cover
-		border-radius: 10px
-		&:nth-child(4n + 3)
-			margin-top: 32px
-		&:nth-child(4n + 1)
-			margin-top: 89px
+.surf-box
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+	border-radius: 10px
+	&:nth-child(4n + 3)
+		margin-top: 32px
+	&:nth-child(4n + 1)
+		margin-top: 89px
+	&::before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		// устанавливаем оверлей через rgba(), opacity применится ко всем дочерним элементам
+		background-color: rgba(#1c2121, .85)
+		transition: background-color .25s ease-out
+	&__inner
+		position: relative
+		min-height: 750px
+		padding: 72px 40px 80px
+		padding-right: 0
+		&-title, &-location
+			z-index: 10
+.swiper-slide-active, .surf-box:hover
+	z-index: 20
+	.btn1
+		opacity: 1
+	&.surf-box
 		&::before
-			content: ''
-			position: absolute
-			width: 100%
-			height: 100%
-			// устанавливаем оверлей через rgba(), opacity применится ко всем дочерним элементам
-			background-color: rgba(#1c2121, .85)
-			transition: background-color .25s ease-out
-		&__inner
-			position: relative
-			min-height: 750px
-			padding: 72px 40px 80px
-			padding-right: 0
-			&-title, &-location
-				z-index: 10
-	.swiper-slide-active, .surf-box:hover
-		z-index: 20
-		.btn1
-			opacity: 1
-		&.surf-box
-			&::before
-				background-color: rgba(#1c2121, .3)
-	.surf-box:hover
-		z-index: 30
+			background-color: rgba(#1c2121, .3)
+.surf-box:hover
+	z-index: 30
 
 .surf-box__inner-title
 	font-weight: 800
@@ -269,12 +305,13 @@
 //                                    map-slider
 .slider-map
 	max-width: 1200px
-	min-height: 635px
+	height: 635px
 	background-repeat: no-repeat
-	background-size: cover
+	background-size: 100% 100%
 	background-position: center
 	// позиционирование по центру
 	margin: 0 auto
+	overflow: visible
 
 .surf-icon, .water-icon, .wind-icon
 	height: 23.8px
@@ -291,6 +328,7 @@
 		cursor: pointer
 		position: relative
 		transition: box-shadow .25s ease-out
+		// z-index: 50
 		&:hover
 			box-shadow: 0 0 35px rgba($accent, .85), 0 0 35px rgba(#6efd00, .85)
 		&::before
@@ -321,7 +359,7 @@
 .slider-map__content
 	background: rgba(#0F1010, .7)
 	position: absolute
-	bottom: 50px
+	bottom: 665px
 	right: 0
 	border-radius: 8px
 	width: 283px
@@ -385,7 +423,11 @@
 	justify-content: center
 
 .swiper-slide-thumb-active
-	z-index: 5
+	z-index: 1
+	pointer-events: none
+	.slider-map__content-link
+		height: 20px
+		pointer-events: auto
 	.slider-map__circle
 		cursor: default
 		box-shadow: 0 0 35px rgba($accent, .85), 0 0 35px rgba(#6efd00, .85)
@@ -397,48 +439,55 @@
 		transform: scale(1)
 
 .slider-map__item--1
-	top: 335px
+	top: 53%
 	left: 0
+	.slider-map__content
+		left: 0
 .slider-map__item--2
-	top: 270px
+	top: 43%
 	left: 0
 .slider-map__item--3
-	top: 318px
-	left: 36px
+	top: 51%
+	left: 2%
 .slider-map__item--4
-	top: 498px
-	right: 40px
+	top: 78%
+	right: 3.5%
+	z-index: 10
 .slider-map__item--5
-	top: 213px
-	right: 70px
+	top: 34%
+	right: 5%
 .slider-map__item--6
-	top: 550px
-	right: 114px
+	top: 85%
+	right: 9%
 .slider-map__item--7
-	top: 394px
-	right: 96px
+	top: 59%
+	right: 8%
 .slider-map__item--8
-	top: 509px
-	left: 38px
+	top: 80%
+	left: 2%
+	.slider-map__content
+		right: 120px
 
 //                                       SECTION TRAVEL
 .holder
 	background-position: bottom right
 	background-repeat: no-repeat
-	.title__bg > h3
-		right: -100px
+	.title__bg
+		width: 572px
+		h3
+			right: -100px
 	.navigation
-		top: 168px
+		top: 100px
 
 .holder-slider
 	padding-bottom: 140px
 	&__subtitle
 		text-align: right
-		padding-right: 80px
 		padding-top: 92px
 	&__head
 		background-repeat: no-repeat
 		background-position: top left
+		background-size: contain
 		min-height: 780px
 	&__descr
 		background-repeat: no-repeat
@@ -449,6 +498,8 @@
 		height: 280px
 		display: flex
 		align-items: end
+		position: relative
+		bottom: 50px
 
 .holder-slider__info
 	display: flex
@@ -497,14 +548,17 @@
 //                                          section SLEEP
 
 .sleep
+	.title__bg
+		h3
+			right: 25px
 	background-position: right 1200px
-	.holder-slider__descr
-		padding-left: 110px
-		margin-top: -280px
-		min-height: 400px
-		background-size: contain
-	.holder-pricing__span
-		right: 30px
+.holder-slider__descr
+	padding-left: 110px
+	margin-top: -280px
+	min-height: 400px
+	background-size: contain
+.holder-pricing__span
+	right: 30px
 
 .minus, .plus
 	width: 14px
@@ -513,3 +567,208 @@
 .holder-slider__info-item:last-child
 	.holder-slider__info-title
 		width: 300px
+
+//                                          section SHOP
+.shop
+	background-repeat: no-repeat
+	background-position: right center
+	.title__bg
+		h3
+			right: -35px
+	.navigation
+		opacity: 0.25
+		top: -35px
+		padding-top: 10px
+
+.shop__slider-inner
+	padding-left: 132px
+	display: flex
+	justify-content: space-between
+	position: relative
+
+	.btn1
+		position: static
+		transform: none
+		display: block
+		margin-left: 0
+		span
+			padding-top: 13px
+			padding-bottom: 13px
+			padding-right: 50px
+
+.shop__slider-info
+	margin-top: 160px
+
+.descr__head-shop
+	max-width: 340px
+	line-height: 1
+	margin-bottom: 47px
+
+.shop__slider-price
+	font-weight: 800
+	font-size: 32px
+	line-height: 40px
+	margin-bottom: 64px
+	sup
+		font-size: 18px
+		margin-left: 5px
+.stars
+	margin-left: -3px
+	display: flex
+	margin-bottom: -10px
+
+.shop__extras
+	display: flex
+	flex-direction: column
+	justify-content: end
+	// margin-left: 152px
+	margin-right: 80px
+
+.shop__extras-title
+	font-weight: 800
+	font-size: 28px
+	line-height: 40px
+	margin-bottom: 25px
+
+.shop__extras-inner
+	display: flex
+
+.shop__extras-box
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: space-between
+	width: 158px
+	&:first-child
+		margin-right: 37px
+	&:last-child
+		img
+			position: relative
+			top: 50%
+			transform: translateY(-50%)
+	.shop__extras-name
+		font-weight: 400
+		font-size: 18px
+		line-height: 22px
+		letter-spacing: 8px
+		opacity: 0.5
+	.shop__extras-price
+		font-weight: 800
+		font-size: 18px
+		line-height: 40px
+	picture
+		height: 103px
+		margin-bottom: 56px
+
+.surfboard
+	position: relative
+
+.surfboard-box
+	position: absolute
+
+.surfboard__position--1
+	top: 215px
+	left: 170px
+
+.surfboard__position--2
+	top: 295px
+	left: -5px
+
+.surfboard__position--3
+	bottom: 65px
+	left: 52px
+
+.surfboard-box__circle
+	width: 20px
+	height: 20px
+	border-radius: 50%
+	position: relative
+	background-color: #fff
+	cursor: pointer
+	&.active
+		.circle-row:last-child
+			transform: translate(-50%, -50%) rotate(0deg)
+		&::after
+			opacity: 1
+			left: 30px
+		& + .surfboard-box__content
+			opacity: 1
+			left: 0
+
+	&::after
+		content: ''
+		background: #fff
+		width: 80px
+		height: 1px
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		opacity: 0
+		left: 0
+		transition: left .25s ease-out, opacity .25s ease-out
+
+
+.circle-row
+	background-color: $accent
+	position: absolute
+	width: 12px
+	height: 2px
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	&:last-child
+		transform: translate(-50%, -50%) rotate(90deg)
+
+.surfboard-box__content
+	position: absolute
+	width: 265px
+	font-weight: 800
+	font-size: 24px
+	line-height: 24px
+	letter-spacing: 0
+	top: -52%
+	transform: translate(50%)
+	opacity: 0
+	margin-left: 13px
+	left: -100px
+	transition: left .25s ease-out, opacity .25s ease-out
+
+.surfboard__position--3	
+	.surfboard-box__circle
+		&.active
+			&::after
+				left: -92px
+			& + .surfboard-box__content
+				left: -525px
+
+		&::after
+			top: 50%
+			transform: translateY(-50%)
+			left: -62px
+	.surfboard-box__content
+		top: -52%
+		transform: translate(50%)
+		margin-left: 13px
+		left: -450px
+
+footer
+	height: 105px
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: space-between
+	margin-top: 300px
+	margin-bottom: 34px
+	.btn1
+		position: static
+		display: inline-block
+		transform: translateX(0)
+		span
+			padding: 17px
+	.copy
+		font-weight: 300
+		font-size: 12px
+		line-height: 14px
+		letter-spacing: 1.05px
+		opacity: 0.5
+
