@@ -1,16 +1,26 @@
 import Swiper from "swiper"
 
 import gsap from "gsap"
+// import ScrollTrigger from "gsap/ScrollTrigger"
+// gsap.registerPlugin(ScrollTrigger)
+
 import LocomotiveScroll from 'locomotive-scroll'
+
 import {animate, map} from "./gsap-test"
 import { setBackgrounds } from "./set-background"
 import { quantity } from "./quantity"
 
-const locomotiveScroll = new LocomotiveScroll()
-
 import {EffectCube, EffectFade, Parallax, Mousewheel, Controller, Pagination, Scrollbar, Navigation, Thumbs, Autoplay } from 'swiper/modules'
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	const locoScroll = new LocomotiveScroll({
+		lenisOptions: {
+			el: document.querySelector("body"),
+			duration: 1.7,
+			smooth: true,
+		},
+	})
 
 
 	const swiperDots = new Swiper('.slider-dots', {
@@ -56,6 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		loop: true,
 		speed: 1500,
 	});
+
+	swiperTop.on('slideChange', function() {
+		let currentSlide = swiperTop.realIndex + 1
+
+		let dotSelector = `.dot-${currentSlide}`
+		let lineSelector = `.line-animation-${currentSlide}`
+		let titleSelector = `.title-${currentSlide}`
+
+		let dot = document.querySelector(dotSelector)
+		let line = document.querySelector(lineSelector)
+		let title = document.querySelector(titleSelector)
+		// console.log(lineSelector)
+
+		map(dot, line, title)
+	})
 
 	const swiperMap = new Swiper('.slider-map', {
 		slidesPerView: 8,
